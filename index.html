@@ -22,13 +22,10 @@
       --line: #e2e2e2;
     }
 
-    html, body { height: 100%; margin: 0; }
     body {
-      background: var(--bg);
-      color: var(--ink);
+      margin: 0; background: var(--bg); color: var(--ink);
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      -webkit-font-smoothing: antialiased;
-      letter-spacing: 0.01em;
+      -webkit-font-smoothing: antialiased; letter-spacing: 0.01em;
     }
 
     a { color: var(--ink); text-decoration: none; }
@@ -36,9 +33,13 @@
 
     .wrap { max-width: 1120px; margin: 0 auto; padding: 24px; }
 
+    /* Header */
     .top-rule { height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
-    header { padding: 16px 0 8px; text-align:center; }
+    header { padding: 18px 0; display: flex; justify-content: space-between; align-items: center; }
     .brand h1 { margin: 0; font: 700 18px/1.1 Inter; letter-spacing: .22em; text-transform: uppercase; }
+    nav { display: flex; gap: 24px; }
+    nav a { font-weight: 500; font-size: 15px; text-transform: uppercase; letter-spacing: .08em; }
+    nav a:hover { color: var(--accent); }
 
     /* Hero */
     .hero { position: relative; padding: 0 0 32px; }
@@ -54,8 +55,7 @@
       box-shadow: 0 10px 26px rgba(0,0,0,.35);
     }
     .hero-visual::after {
-      content:"";
-      position: absolute; inset:0;
+      content:""; position: absolute; inset:0;
       background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.50));
     }
     .hero-inner {
@@ -95,8 +95,14 @@
 <body>
   <div class="top-rule"></div>
   <div class="wrap">
+    <!-- Header -->
     <header>
       <span class="brand"><h1>Mantesnic Private Capital</h1></span>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </header>
 
     <!-- Hero -->
