@@ -3,69 +3,83 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact – Mantesnic Private Capital</title>
-  <meta name="description" content="Contact Mantesnic Private Capital for discreet introductions and investment advisory." />
+  <title>Contact — Mantesnic Private Capital</title>
+  <meta name="description" content="Discrete contact details for Mantesnic Private Capital." />
   <meta name="robots" content="index,follow" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #f5f4f2;
-      --ink: #212224;
-      --muted: #55565a;
-      --accent: #bfa46f;   /* champagne gold */
-      --card: #ffffff;
-      --line: #e2e2e2;
+    :root{
+      --bg:#f5f4f2; --ink:#212224; --muted:#55565a;
+      --accent:#c8a96a; --card:#ffffff; --line:#e2e2e2;
+    }
+    html,body{margin:0;height:100%}
+    *{box-sizing:border-box}
+    body{
+      background:var(--bg); color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      letter-spacing:.01em;
+    }
+    a{color:var(--ink); text-decoration:none}
+    a:hover{color:var(--accent)}
+    .wrap{max-width:1120px; margin:0 auto; padding:0 24px}
+
+    /* Header (same height feel as other pages) */
+    header{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:20px 0;
+    }
+    .brand h1{
+      margin:0; font:700 18px/1.1 Inter;
+      letter-spacing:.22em; text-transform:uppercase;
+    }
+    nav a{margin-left:20px; font-weight:500; font-size:15px}
+
+    /* Page header */
+    .page-head{
+      padding:18px 0 8px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      margin-bottom:24px;
+    }
+    .page-head h2{
+      margin:0; font-weight:600; font-size:22px;
+      letter-spacing:.01em;
+    }
+    .page-head p{
+      margin:6px 0 0; color:var(--muted);
     }
 
-    body {
-      margin: 0; background: var(--bg); color: var(--ink);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      -webkit-font-smoothing: antialiased; letter-spacing: 0.01em;
+    /* Panels */
+    .panel{
+      background:var(--card); border:1px solid var(--line);
+      border-radius:12px; padding:20px; margin-bottom:20px;
     }
-
-    a { color: var(--ink); text-decoration: none; }
-    a:hover { color: var(--accent); }
-
-    .wrap { max-width: 900px; margin: 0 auto; padding: 24px; }
-
-    /* Header */
-    .top-rule { height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
-    header { padding: 18px 0; display: flex; justify-content: space-between; align-items: center; }
-    .brand h1 { margin: 0; font: 700 18px/1.1 Inter; letter-spacing: .22em; text-transform: uppercase; }
-    nav { display: flex; gap: 24px; }
-    nav a { font-weight: 500; font-size: 15px; text-transform: uppercase; letter-spacing: .08em; }
-    nav a:hover { color: var(--accent); }
-
-    /* Contact */
-    .contact { padding: 60px 0; }
-    .contact h2 { font-family: "Playfair Display", serif; font-weight: 600; font-size: 32px; margin-bottom: 20px; }
-    .panel {
-      background: var(--card); border: 1px solid var(--line);
-      border-radius: 14px; padding: 32px;
-      box-shadow: 0 6px 18px rgba(0,0,0,.08);
-      transition: transform .2s ease;
+    .panel h4{
+      margin:0 0 8px; font:700 12px/1 Inter;
+      letter-spacing:.22em; text-transform:uppercase; color:var(--muted);
     }
-    .panel:hover { transform: translateY(-2px); border-color: var(--accent); }
-    .panel h4 { margin: 0 0 8px; font: 700 12px/1 Inter; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
-    .panel p { margin: 0 0 16px; color: var(--muted); }
-    .contact-card { display: grid; gap: 12px; font-size: 16px; }
-    .contact-card a { color: var(--ink); font-weight: 500; border-bottom: 1px dotted var(--accent); width: fit-content; }
-    .subtle { color: var(--muted); font-size: 14px; }
-
+    .panel h3{margin:0 0 10px; font-weight:600; font-size:20px}
+    .panel p{margin:0 0 10px; color:#2b2c2f; line-height:1.6}
+    .contact-card{display:grid; gap:8px}
+    .contact-card a{
+      border-bottom:1px dotted var(--accent); width:fit-content;
+    }
+    .subtle{color:var(--muted); font-size:13px}
 
     /* Footer */
-    footer { padding: 28px 0 40px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); margin-top:40px; text-align:center; }
+    footer{padding:28px 0 40px; color:var(--muted); font-size:13px; text-align:center}
+    footer .row{border-top:1px solid var(--line); padding-top:18px}
   </style>
 </head>
 <body>
-  <div class="top-rule"></div>
   <div class="wrap">
-    <!-- Header -->
+    <!-- Nav -->
     <header>
       <span class="brand"><h1>Mantesnic Private Capital</h1></span>
       <nav>
@@ -75,35 +89,38 @@
       </nav>
     </header>
 
-    <!-- Contact -->
-    <section class="contact">
-      <div class="panel">
-        <h4>Contact</h4>
-        <h2>Request an Introduction</h2>
-        <p>For principals and advisors seeking a private conversation.</p>
-        <div class="contact-card">
-          <a href="mailto:sk@mantesnicprivatecapital.com">sk@mantesnicprivatecapital.com</a>
-          <a href="tel:+447813784645">+44 7813 784645</a>
-          <a href="tel:+442073180901">+44 20 7318 0901 <span class="subtle">(VoIP)</span></a>
-          <span class="subtle">Encrypted channels available upon request.</span>
-        </div>
+    <!-- Page header -->
+    <section class="page-head">
+      <h2>Contact</h2>
+      <p>For principals and advisors seeking a private conversation.</p>
+    </section>
 
-        <!-- Contact Form -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="_replyto" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+    <!-- Contact panel -->
+    <section class="panel">
+      <h4>Direct</h4>
+      <h3>Request an introduction</h3>
+      <div class="contact-card">
+        <a href="mailto:sk@mantesnicprivatecapital.com">sk@mantesnicprivatecapital.com</a>
+        <a href="tel:+447813784645">+44 7813 784645</a>
+        <a href="tel:+442073180901">+44 20 7318 0901 <span class="subtle">(VoIP)</span></a>
+        <span class="subtle">Encrypted channels available upon request.</span>
       </div>
+    </section>
+
+    <!-- Optional notes -->
+    <section class="panel">
+      <h4>Notes</h4>
+      <p>We operate with confidentiality and discretion. Engagements are conducted subject to compliance, due diligence, and mutually agreed terms.</p>
     </section>
 
     <!-- Footer -->
     <footer>
-      © 2014–<span id="year"></span> Mantesnic Private Capital
+      <div class="row">© 2014–<span id="year"></span> Mantesnic Private Capital</div>
     </footer>
   </div>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
