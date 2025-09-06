@@ -103,6 +103,22 @@
     /* Contact grid (Mandate + Contact side-by-side on desktop) */
     .contact { display: grid; grid-template-columns: 1fr; gap: 16px; }
     @media (min-width: 860px) { .contact { grid-template-columns: 1.2fr .8fr; align-items: start; } }
+    /* Gold bullets for list items */
+    .list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .list li {
+      margin: 8px 0;
+      display: flex;
+      align-items: baseline;
+    }
+    .list li::before {
+      content: "•";
+      color: var(--accent);   /* gold */
+      font-weight: bold;
+      margin-right: 10px;
+    }
 
     .contact-card { display: grid; gap: 10px; }
     .contact-card a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--accent); width: fit-content; }
