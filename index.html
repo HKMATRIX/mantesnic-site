@@ -12,7 +12,7 @@
   <meta property="og:description" content="A discreet boutique facilitating investment advisory, strategic transactions, and private opportunities." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mantesnic.example" />
-  <meta property="og:image" content="" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/HKMATRIX/mantesnic-site/main/LondonSkyline.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Fonts -->
@@ -40,15 +40,23 @@
 
     .wrap { max-width: 1120px; margin: 0 auto; padding: 24px; }
 
-    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; }
-    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--ink); }
-    .monogram { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, #0f0f12, #1a1b20);
-      border: 1px solid var(--line); display: grid; place-items: center; position: relative; }
-    .monogram::after { content: "M"; font-family: "Playfair Display", serif; font-weight: 700; color: var(--accent); letter-spacing: 0.02em; }
+    header { display: flex; justify-content: center; padding: 12px 0; }
     .brand h1 { font: 600 15px/1 Inter; margin: 0; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.92; }
 
-    .hero { position: relative; padding: 28px 0 40px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: radial-gradient(1200px 400px at 50% -10%, rgba(200,169,106,.08), transparent 60%); }
-    
+    .hero-visual {
+      position: relative;
+      min-height: clamp(300px, 50vw, 420px);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background-image: url('https://raw.githubusercontent.com/HKMATRIX/mantesnic-site/main/LondonSkyline.jpg');
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 24px;
+    }
+    .hero-visual::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(5,5,6,.55), rgba(5,5,6,.25)); }
+    .hero-inner { position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:inherit; padding:32px; text-align:center; }
+
     .eyebrow { font: 500 11px/1 Inter; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
     .headline { font-family: "Playfair Display", serif; font-weight: 600; font-size: clamp(38px, 6vw, 64px); line-height: 1.06; margin: 0 0 14px; letter-spacing: .01em; }
     .sub { max-width: 720px; margin: 0 auto 28px; color: #d8d8dc; font-size: clamp(16px, 2.2vw, 18px); line-height: 1.6; }
@@ -64,84 +72,66 @@
     .chip { position: absolute; top: 16px; right: 16px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; color: var(--muted); }
 
     .statement { padding: 56px 0; }
-    .quote { font-family: "Playfair Display", serif; font-weight: 400; font-size: clamp(22px, 3vw, 28px); color: #e7e7ea; letter-spacing: .01em; }
     .rule { height: 1px; background: linear-gradient(to right, transparent, var(--line), transparent); margin: 28px 0; }
-
-    .contact { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    @media (min-width: 860px) { .contact { grid-template-columns: 1.2fr .8fr; align-items: start; } }
-    .panel { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+    .panel { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; margin-bottom: 28px; }
     .panel h4 { margin: 0 0 8px; font: 600 14px/1 Inter; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
     .panel h2 { margin: 0 0 6px; font-family: "Playfair Display", serif; font-weight: 600; font-size: 28px; }
     .panel p { margin: 0 0 10px; color: #cfd1d6; }
+
     .list { margin: 10px 0 0; padding: 0; list-style: none; color: #c8c9cf; }
     .list li { margin: 8px 0; display: flex; gap: 10px; align-items: baseline; }
     .list li::before { content: "•"; color: var(--accent); }
+
     .contact-card { display: grid; gap: 10px; }
     .contact-card a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--accent); width: fit-content; }
     .subtle { color: var(--muted); font-size: 13px; }
 
     footer { padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
     footer .row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 18px; }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px);} to { opacity:1; transform: translateY(0);} }
-    [data-anim] { animation: fadeUp .7s ease both; }
-    [data-anim="1"] { animation-delay: .05s; }
-    [data-anim="2"] { animation-delay: .12s; }
-    [data-anim="3"] { animation-delay: .18s; }
-  .hero-visual{position:relative;min-height:clamp(220px,40vw,380px);border-radius:16px;overflow:hidden;border:1px solid var(--line);background-image:url('https://images.unsplash.com/photo-1505765050516-f72dcac9c60b?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;margin-bottom:24px;}
-.hero-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(5,5,6,.55), rgba(5,5,6,.35));}
-.hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:clamp(220px,40vw,380px);padding:32px; text-align:center;}
-.hero-visual{position:relative;min-height:clamp(220px,40vw,380px);border-radius:16px;overflow:hidden;border:1px solid var(--line);background-image:url('https://images.unsplash.com/photo-1505765050516-f72dcac9c60b?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;margin-bottom:24px;}
-.hero-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(5,5,6,.55), rgba(5,5,6,.35));}
-.hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:clamp(220px,40vw,380px);padding:32px; text-align:center;}
-</style>
+  </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div style="margin:0 auto; text-align:center; width:100%;">
-        <a class="brand" href="#top" aria-label="Mantesnic Private Capital" style="justify-content:center; gap:8px;">
-          <h1 style="margin:0 auto; font: 600 14px/1 Inter; letter-spacing:.18em; text-transform:uppercase;">Mantesnic Private Capital</h1>
-        </a>
-      </div>
+      <a class="brand" href="#top"><h1>Mantesnic Private Capital</h1></a>
     </header>
 
     <section class="hero" id="top">
-      <div class="wrap" style="padding:0;">
-        <div class="hero-visual" aria-label="London skyline">
-          <div class="hero-inner">
-            <div class="eyebrow" data-anim="1">Private & Confidential</div>
-            <h2 class="headline" data-anim="2">Invest with clarity. Create lasting value.</h2>
-            <p class="sub" data-anim="3">We are a discreet investment and advisory boutique partnering with select principals and global investors. Our focus is disciplined risk, aligned interests, and decisive execution.</p>
-            <a class="btn primary" href="mailto:sk@mantesnicprivatecapital.com">Request an Introduction</a>
-          </div>
+      <div class="hero-visual" aria-label="London skyline">
+        <div class="hero-inner">
+          <div class="eyebrow">Private & Confidential</div>
+          <h2 class="headline">Invest with clarity. Create lasting value.</h2>
+          <p class="sub">We are a discreet investment and advisory boutique partnering with select principals and global investors. Our focus is disciplined risk, aligned interests, and decisive execution.</p>
+          <a class="btn primary" href="mailto:sk@mantesnicprivatecapital.com">Request an Introduction</a>
         </div>
+      </div>
+    </section>
 
-        <div class="grid" style="margin-top:36px;"> style="margin-top:36px;"> style="margin-top:36px;">
-          <article class="card" data-anim="1">
-            <span class="chip">Advisory</span>
-            <h3>Investment Advisory</h3>
-            <p>Strategic guidance and introductions, tailored structures, and discreet execution—supporting principals with alignment and speed.</p>
-          </article>
-          <article class="card" data-anim="2">
-            <span class="chip">Transactions</span>
-            <h3>Strategic Transactions</h3>
-            <p>Buy-side and sell-side introductions, carve-outs, minority recapitalizations, and joint ventures—structured to preserve discretion.</p>
-          </article>
-          <article class="card" data-anim="3">
-            <span class="chip">Origination</span>
-            <h3>Private Opportunities</h3>
-            <p>Off-market origination through a vetted network of family offices, principals, and operators across EMEA.</p>
-          </article>
-        </div>
+    <section>
+      <div class="grid">
+        <article class="card">
+          <span class="chip">Advisory</span>
+          <h3>Investment Advisory</h3>
+          <p>Strategic guidance and introductions, tailored structures, and discreet execution—supporting principals with alignment and speed.</p>
+        </article>
+        <article class="card">
+          <span class="chip">Transactions</span>
+          <h3>Strategic Transactions</h3>
+          <p>Buy-side and sell-side introductions, carve-outs, minority recapitalizations, and joint ventures—structured to preserve discretion.</p>
+        </article>
+        <article class="card">
+          <span class="chip">Origination</span>
+          <h3>Private Opportunities</h3>
+          <p>Off-market origination through a vetted network of family offices, principals, and operators across EMEA.</p>
+        </article>
       </div>
     </section>
 
     <section class="statement" id="mandates">
       <div class="rule"></div>
       <div class="panel">
-        <h4>Investment Approach</h4>
-        <p>We operate deal‑by‑deal with an entrepreneurial mindset and a rigorous focus on downside protection. We originate and structure transactions through long‑standing relationships, pursuing opportunities with superior risk‑adjusted potential.</p>
+        <h4>Investment Philosophy</h4>
+        <p><em>“Capital is most effective when deployed with patience, discipline, and foresight. Our mission is to create enduring value while protecting the integrity of every relationship.”</em></p>
       </div>
       <div class="rule"></div>
       <div class="panel">
@@ -149,27 +139,22 @@
         <p>Mantesnic Private Capital is a boutique advisory firm operating at the intersection of private investors, operators, and global capital.</p>
         <p>We combine a dynamic and opportunistic approach with disciplined analysis and strict confidentiality. Our relationships provide access to transactions rarely seen in the wider market.</p>
       </div>
-      <div class="contact">
-        <div class="panel" id="contact">
-          <h4>Discreet Contact</h4>
-          <h2>Request an introduction</h2>
-          <p>For principals and advisors seeking a private conversation.</p>
-          <div class="contact-card">
-            <a href="mailto:sk@mantesnicprivatecapital.com">sk@mantesnicprivatecapital.com</a>
-            <a href="tel:+447813784645">+44 7813 784645</a>
-            <a href="tel:+442073180901">+44 20 7318 0901 <span class="subtle">(VoIP)</span></a>
-            <span class="subtle">Encrypted channels available upon request.</span>
-          </div>
+      <div class="panel" id="contact">
+        <h4>Discreet Contact</h4>
+        <h2>Request an introduction</h2>
+        <p>For principals and advisors seeking a private conversation.</p>
+        <div class="contact-card">
+          <a href="mailto:sk@mantesnicprivatecapital.com">sk@mantesnicprivatecapital.com</a>
+          <a href="tel:+447813784645">+44 7813 784645</a>
+          <a href="tel:+442073180901">+44 20 7318 0901 <span class="subtle">(VoIP)</span></a>
+          <span class="subtle">Encrypted channels available upon request.</span>
         </div>
       </div>
     </section>
 
     <footer>
       <div class="row">
-        <div style="display:flex; align-items:center; gap:10px;">
-          <div class="monogram" aria-hidden="true" style="width:28px;height:28px;border-radius:8px;"></div>
-          <span>© <span id="y"></span> Mantesnic Private Capital</span>
-        </div>
+        <span>© <span id="y"></span> Mantesnic Private Capital</span>
       </div>
       <p class="subtle" style="margin-top:10px;">Mantesnic Private Capital is a private capital and advisory boutique. We do not provide regulated investment, legal, tax, or accounting advice. Any engagement is subject to KYC/AML and terms of business.</p>
     </footer>
