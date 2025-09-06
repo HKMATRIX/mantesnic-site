@@ -21,112 +21,115 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #f5f4f2;        /* stone white background */
-      --ink: #212224;       /* main text color: deep charcoal */
-      --muted: #55565a;     /* muted grey for subtle text */
-      --accent: #c8a96a;    /* gold accent */
-      --card: #ffffff;      /* white panels/cards */
-      --line: #e2e2e2;      /* soft light grey dividers */
-      }
-
-    html, body { height: 100%; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; background: var(--bg); color: var(--ink);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-      letter-spacing: 0.01em;
+    :root{
+      --bg:#f5f4f2;       /* stone white background */
+      --ink:#212224;      /* primary text (charcoal) */
+      --muted:#55565a;    /* muted text */
+      --accent:#c8a96a;   /* gold */
+      --card:#ffffff;     /* card background */
+      --line:#e2e2e2;     /* light dividers */
     }
 
-    a { color: var(--ink); text-decoration: none; }
-    a:hover { color: var(--ink); }
+    html,body{height:100%}
+    *{box-sizing:border-box}
+    body{
+      margin:0;background:var(--bg);color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+      letter-spacing:.01em;
+    }
 
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    a{color:var(--ink);text-decoration:none}
+    a:hover{color:var(--ink)}
+
+    .wrap{max-width:1120px;margin:0 auto;padding:24px}
 
     /* Header */
-    .top-rule { height: 2px; background: linear-gradient(90deg, transparent, rgba(200,169,106,.6), transparent); }
-    header { padding: 16px 0 8px; text-align:center; }
-    .brand { display:block; color:var(--ink); }
-    .brand h1 { margin: 0; font: 700 18px/1.1 Inter; letter-spacing: .22em; text-transform: uppercase; opacity: .98; }
+    .top-rule{height:2px;background:linear-gradient(90deg,transparent,rgba(200,169,106,.6),transparent)}
+    header{padding:16px 0 8px;text-align:center}
+    .brand{display:block;color:var(--ink)}
+    .brand h1{margin:0;font:700 18px/1.1 Inter;letter-spacing:.22em;text-transform:uppercase;opacity:.98}
 
     /* Hero */
-    .hero { position: relative; padding: 16px 0 40px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .hero{position:relative;padding:16px 0 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .hero-visual{
-      position:relative; min-height:clamp(280px,48vw,440px);
-      border:1px solid var(--line); border-radius:16px; overflow:hidden; margin-bottom:24px;
+      position:relative;min-height:clamp(280px,48vw,440px);
+      border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:24px;
       background-image:url('https://raw.githubusercontent.com/HKMATRIX/mantesnic-site/main/LondonSkyline.jpg');
-      background-size:cover; background-position:center;
-      box-shadow: 0 10px 26px rgba(0,0,0,.35);
+      background-size:cover;background-position:center;
+      box-shadow:0 10px 26px rgba(0,0,0,.12);
     }
-    .hero-visual::after{ content:""; position:absolute; inset:0;
-      background:linear-gradient(180deg, rgba(6,6,7,.85), rgba(6,6,7,.65)); }
-    .hero-inner{ position:relative; z-index:1; min-height:inherit; display:flex; align-items:center; justify-content:center; text-align:center; padding:28px; }
+    /* Light veil over the image so dark text is readable */
+    .hero-visual::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(245,244,242,.62), rgba(245,244,242,.38));
+    }
+    .hero-inner{position:relative;z-index:1;min-height:inherit;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px}
     .hero-caption{
-      display:inline-block; max-width:820px; padding:22px 26px;
-      background: rgba(12,12,14,.40);
-      border: 1px solid rgba(200,169,106,.28);
-      border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,.25); backdrop-filter: blur(2px);
+      display:inline-block;max-width:820px;padding:22px 26px;
+      background:rgba(255,255,255,.60);
+      border:1px solid rgba(200,169,106,.28);
+      border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.08);backdrop-filter:blur(2px)
     }
 
-    .eyebrow { font: 600 11px/1 Inter; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-    .headline { font-family: "Playfair Display", serif; font-weight: 600; font-size: clamp(36px, 6vw, 60px); line-height: 1.06; margin: 0 0 12px; letter-spacing: .01em; }
-    .sub { max-width: 720px; margin: 10px auto 20px; color: #e2e2e6; font-size: clamp(16px, 2.1vw, 18px); line-height: 1.6; }
-    .btn { padding: 12px 18px; border-radius: 12px; border: 1px solid rgba(200,169,106,.45); background: linear-gradient(180deg, rgba(200,169,106,.22), rgba(200,169,106,.10)); color: var(--ink); font-weight: 600; }
-    .btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .eyebrow{font:600 11px/1 Inter;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+    .headline{
+      font-family:"Playfair Display",serif;font-weight:600;
+      font-size:clamp(36px,6vw,60px);line-height:1.06;margin:0 0 12px;letter-spacing:.01em;color:var(--ink)
+    }
+    .sub{max-width:720px;margin:10px auto 20px;color:var(--ink);font-size:clamp(16px,2.1vw,18px);line-height:1.6}
+    .btn{
+      padding:12px 18px;border-radius:12px;border:1px solid rgba(200,169,106,.45);
+      background:linear-gradient(180deg,rgba(200,169,106,.22),rgba(200,169,106,.10));
+      color:var(--ink);font-weight:600
+    }
+    .btn:hover{border-color:var(--accent);transform:translateY(-1px)}
 
     /* Cards */
-    .grid { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 28px; }
-    @media (min-width: 780px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; min-height: 180px; position: relative; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
-    .card:hover { transform: translateY(-2px); border-color: rgba(200,169,106,.35); box-shadow: 0 10px 18px rgba(0,0,0,.25); }
-    .card h3 { font-family: "Playfair Display", serif; font-weight: 600; font-size: 20px; margin: 0 0 8px; }
-    .card p { margin: 0; color: #c8c9cf; line-height: 1.6; }
-    .chip { position: absolute; top: 16px; right: 16px; padding: 6px 10px; border: 1px solid rgba(200,169,106,.35); background: rgba(200,169,106,.08); border-radius: 999px; font-size: 12px; color: var(--muted); }
+    .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:28px}
+    @media (min-width:780px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;min-height:180px;
+      position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+      box-shadow:0 2px 6px rgba(0,0,0,.06)
+    }
+    .card:hover{transform:translateY(-2px);border-color:rgba(200,169,106,.35);box-shadow:0 10px 18px rgba(0,0,0,.10)}
+    .card h3{font-family:"Playfair Display",serif;font-weight:600;font-size:20px;margin:0 0 8px}
+    .card p{margin:0;color:#6a6b70;line-height:1.6}
+    .chip{
+      position:absolute;top:16px;right:16px;padding:6px 10px;border:1px solid rgba(200,169,106,.35);
+      background:rgba(200,169,106,.08);border-radius:999px;font-size:12px;color:var(--muted)
+    }
 
     /* Sections */
-    .statement { padding: 56px 0; }
-    .rule { height: 1px; background: linear-gradient(to right, transparent, var(--line), transparent); margin: 28px 0; }
-    .panel { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
-    /* Only stack panels when in statement sections */
-    .statement > .panel + .panel { margin-top: 28px; }
+    .statement{padding:56px 0}
+    .rule{height:1px;background:linear-gradient(to right,transparent,var(--line),transparent);margin:28px 0}
+    .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    /* Only stack panels vertically inside the statement section */
+    .statement > .panel + .panel{margin-top:28px}
+    /* Keep contact panels aligned side-by-side */
+    .contact .panel{margin-top:0}
 
-    /* Keep contact panels aligned side by side */
-    .contact .panel { margin-top: 0; }
-    .panel h4 { margin: 0 0 8px; font: 700 12px/1 Inter; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
-    .panel h2 { margin: 0 0 6px; font-family: "Playfair Display", serif; font-weight: 600; font-size: 28px; }
-    .panel p { margin: 0 0 10px; color: #cfd1d6; }
+    .panel h4{margin:0 0 8px;font:700 12px/1 Inter;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+    .panel h2{margin:0 0 6px;font-family:"Playfair Display",serif;font-weight:600;font-size:28px}
+    .panel p{margin:0 0 10px;color:#6a6b70}
 
-    .list { margin: 10px 0 0; padding: 0 0 0 18px; color: #c8c9cf; }
-    .list li { margin: 8px 0; }
+    /* Lists with gold bullets */
+    .list{margin:10px 0 0;padding:0;list-style:none;color:#6a6b70}
+    .list li{margin:8px 0;display:flex;align-items:baseline}
+    .list li::before{content:"•";color:var(--accent);font-weight:bold;margin-right:10px}
 
     /* Contact grid (Mandate + Contact side-by-side on desktop) */
-    .contact { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    @media (min-width: 860px) { .contact { grid-template-columns: 1.2fr .8fr; align-items: start; } }
-    /* Gold bullets for list items */
-    .list {
-      list-style: none;
-      padding-left: 0;
-    }
-    .list li {
-      margin: 8px 0;
-      display: flex;
-      align-items: baseline;
-    }
-    .list li::before {
-      content: "•";
-      color: var(--accent);   /* gold */
-      font-weight: bold;
-      margin-right: 10px;
-    }
+    .contact{display:grid;grid-template-columns:1fr;gap:16px}
+    @media (min-width:860px){.contact{grid-template-columns:1.2fr .8fr;align-items:start}}
 
-    .contact-card { display: grid; gap: 10px; }
-    .contact-card a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--accent); width: fit-content; }
-    .subtle { color: var(--muted); font-size: 13px; }
+    .contact-card{display:grid;gap:10px}
+    .contact-card a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent);width:fit-content}
+    .subtle{color:var(--muted);font-size:13px}
 
     /* Footer */
-    footer { padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
-    footer .row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 18px; }
+    footer{padding:28px 0 40px;color:var(--muted);font-size:13px}
+    footer .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px}
   </style>
 </head>
 <body>
@@ -190,7 +193,7 @@
         <p>We combine a dynamic and opportunistic approach with disciplined analysis and strict confidentiality. Our relationships provide access to transactions rarely seen in the wider market.</p>
       </div>
 
-      <!-- Mandate + Contact (same grid so they sit side-by-side on desktop) -->
+      <!-- Mandate + Contact -->
       <div class="rule"></div>
       <div class="contact" id="engage">
         <div class="panel" id="mandate">
