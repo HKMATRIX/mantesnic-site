@@ -15,22 +15,20 @@
   <style>
     :root{
       --bg:#f5f4f2; --ink:#212224; --muted:#55565a;
-      --accent:#c8a96a; --card:#ffffff; --line:#e2e2e2;
+      --line:#e2e2e2;
     }
-    html,body{margin:0;height:100%}
-    *{box-sizing:border-box}
     body{
-      background:var(--bg); color:var(--ink);
+      margin:0; background:var(--bg); color:var(--ink);
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
       letter-spacing:.01em;
       line-height:1.6;
     }
     a{color:var(--ink); text-decoration:none}
-    a:hover{color:var(--accent)}
+    a:hover{color:var(--muted)}
     .wrap{max-width:1120px; margin:0 auto; padding:0 24px}
 
-    /* Header (consistent with other pages) */
+    /* Header */
     header{
       display:flex; justify-content:space-between; align-items:center;
       padding:20px 0;
@@ -41,7 +39,7 @@
     }
     nav a{margin-left:20px; font-weight:500; font-size:15px}
 
-    /* Page header */
+    /* Page head */
     .page-head{
       padding:18px 0 8px;
       border-top:1px solid var(--line);
@@ -51,25 +49,11 @@
     .page-head h2{margin:0; font-weight:600; font-size:22px}
     .page-head p{margin:6px 0 0; color:var(--muted)}
 
-    /* Team grid */
-    .team{display:grid; gap:18px}
-    @media (min-width:760px){ .team{grid-template-columns:1fr 1fr} }
-
-    .card{
-      background:var(--card); border:1px solid var(--line);
-      border-radius:12px; padding:18px;
-      display:flex; gap:16px; align-items:flex-start;
-    }
-    .avatar{
-      width:64px; height:64px; border-radius:50%;
-      background:linear-gradient(180deg, rgba(200,169,106,.25), rgba(200,169,106,.15));
-      border:1px solid rgba(200,169,106,.45);
-      display:grid; place-items:center; flex:0 0 64px;
-      font-weight:700; color:#664; letter-spacing:.04em;
-    }
-    .card h3{margin:2px 0 4px; font-weight:600}
-    .role{color:var(--muted); font-size:14px; margin-bottom:8px}
-    .bio{margin:0; color:#2b2c2f}
+    /* Team list */
+    .team-list{margin:32px 0; padding:0; list-style:none}
+    .team-list li{margin:14px 0; font-size:16px}
+    .team-list strong{font-weight:600}
+    .role{color:var(--muted)}
 
     /* Footer */
     footer{padding:28px 0 40px; color:var(--muted); font-size:13px; text-align:center}
@@ -91,37 +75,14 @@
     <!-- Page header -->
     <section class="page-head">
       <h2>Team</h2>
-      <p>Experienced, discreet, and aligned with our investors.</p>
+      <p>Leadership of Mantesnic Private Capital.</p>
     </section>
 
-    <!-- Team grid -->
-    <section class="team">
-      <!-- James -->
-      <article class="card">
-        <div class="avatar" aria-hidden="true">JK</div>
-        <div>
-          <h3>James Khan</h3>
-          <div class="role">Managing Director</div>
-          <p class="bio">
-            James leads investment strategy and principal relationships, with a focus on
-            disciplined risk, alignment, and decisive execution across opportunities in EMEA.
-          </p>
-        </div>
-      </article>
-
-      <!-- Rodney -->
-      <article class="card">
-        <div class="avatar" aria-hidden="true">RK</div>
-        <div>
-          <h3>Rodney King, MRICS</h3>
-          <div class="role">Director, Real Estate</div>
-          <p class="bio">
-            Rodney oversees origination and structuring in real assets. A chartered surveyor,
-            he brings deep transactional experience and on-the-ground insight across the UK and Europe.
-          </p>
-        </div>
-      </article>
-    </section>
+    <!-- Team list -->
+    <ul class="team-list">
+      <li><strong>James Khan</strong> — Managing Director</li>
+      <li><strong>Rodney King, MRICS</strong> — Real Estate Advisor</li>
+    </ul>
 
     <!-- Footer -->
     <footer>
