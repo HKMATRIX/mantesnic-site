@@ -4,16 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mantesnic Private Capital</title>
-  <meta name="description" content="Mantesnic Private Capital — a discreet boutique investment and advisory firm built on integrity, discretion, and transparency." />
+  <meta name="description" content="Mantesnic Private Capital — a discreet boutique investment and advisory firm focused on integrity, discretion, and transparency." />
   <meta name="robots" content="index,follow" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Mantesnic Private Capital" />
-  <meta property="og:description" content="A discreet boutique facilitating investment advisory and private opportunities." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mantesnicprivatecapital.com" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/HKMATRIX/mantesnic-site/main/LondonSkyline.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,97 +14,87 @@
 
   <style>
     :root {
-      --bg: #f5f4f2;        /* stone white background */
-      --ink: #212224;       /* deep charcoal text */
-      --muted: #55565a;     /* muted grey */
-      --accent: #d4af37;    /* richer gold accent */
-      --card: #ffffff;      /* white panels/cards */
-      --line: #e2e2e2;      /* soft light grey dividers */
+      --bg: #f5f4f2;
+      --ink: #212224;
+      --muted: #55565a;
+      --accent: #bfa46f;   /* refined champagne gold */
+      --card: #ffffff;
+      --line: #e2e2e2;
     }
 
     html, body { height: 100%; margin: 0; }
     body {
-      background: var(--bg); color: var(--ink);
+      background: var(--bg);
+      color: var(--ink);
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       letter-spacing: 0.01em;
     }
 
     a { color: var(--ink); text-decoration: none; }
-    a:hover { color: var(--ink); }
+    a:hover { color: var(--accent); }
 
     .wrap { max-width: 1120px; margin: 0 auto; padding: 24px; }
 
-    /* Header */
     .top-rule { height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
     header { padding: 16px 0 8px; text-align:center; }
-    .brand { display:block; color:var(--ink); }
     .brand h1 { margin: 0; font: 700 18px/1.1 Inter; letter-spacing: .22em; text-transform: uppercase; }
 
     /* Hero */
-    .hero { position: relative; padding: 16px 0 40px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .hero { position: relative; padding: 0 0 32px; }
     .hero-visual {
       position: relative;
-      min-height: clamp(300px, 48vw, 460px);
+      min-height: clamp(280px, 48vw, 440px);
+      border: 1px solid var(--line);
       border-radius: 16px;
       overflow: hidden;
-      margin-bottom: 24px;
       background-image: url('https://raw.githubusercontent.com/HKMATRIX/mantesnic-site/main/LondonSkyline.jpg');
       background-size: cover;
       background-position: center;
       box-shadow: 0 10px 26px rgba(0,0,0,.35);
     }
+    .hero-visual::after {
+      content:"";
+      position: absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.50));
+    }
     .hero-inner {
-      position: relative;
-      z-index: 1;
+      position: relative; z-index:1;
       min-height: inherit;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 28px;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; padding:28px;
     }
     .hero-caption {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(6px);
-      border-radius: 14px;
-      padding: 26px 32px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      display:inline-block;
       max-width: 820px;
+      padding: 22px 26px;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(191,164,111,.35);
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      backdrop-filter: blur(3px);
     }
 
-    .eyebrow { font: 600 11px/1 Inter; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-    .headline { font-family: "Playfair Display", serif; font-weight: 600; font-size: clamp(28px, 5vw, 46px); line-height: 1.2; margin: 0 0 12px; }
-    .sub { font-size: clamp(16px, 2vw, 18px); line-height: 1.6; margin: 0 auto 20px; }
-    .btn {
-      padding: 12px 20px;
-      border-radius: 12px;
-      border: 1px solid var(--accent);
-      background: linear-gradient(180deg, var(--accent), #b59429);
-      color: white;
-      font-weight: 600;
-      box-shadow: 0 4px 10px rgba(0,0,0,.2);
-    }
-    .btn:hover { filter: brightness(1.1); }
+    .eyebrow { font: 600 11px/1 Inter; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .headline { font-family: "Playfair Display", serif; font-weight: 600; font-size: clamp(28px, 5vw, 42px); line-height: 1.25; margin: 0 0 12px; }
+    .sub { max-width: 720px; margin: 10px auto 20px; font-size: 17px; line-height: 1.6; }
+    .btn { padding: 12px 18px; border-radius: 12px; border: 1px solid rgba(191,164,111,.55); background: linear-gradient(180deg, rgba(191,164,111,.3), rgba(191,164,111,.15)); color: var(--ink); font-weight: 600; }
+    .btn:hover { border-color: var(--accent); transform: translateY(-1px); }
 
     /* Sections */
-    .statement { padding: 56px 0; }
+    .statement { padding: 0 0 32px; }
     .rule { height: 1px; background: linear-gradient(to right, transparent, var(--line), transparent); margin: 28px 0; }
-    .panel { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+    .panel { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; margin-bottom: 28px; }
     .panel h4 { margin: 0 0 8px; font: 700 12px/1 Inter; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
-    .panel p { margin: 0 0 10px; color: var(--ink); line-height: 1.6; }
+    .panel p { margin: 0 0 10px; }
 
     /* Footer */
-    footer { padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
-    footer .row { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 18px; }
+    footer { padding: 28px 0 40px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); margin-top:28px; text-align:center; }
   </style>
 </head>
 <body>
   <div class="top-rule"></div>
-
   <div class="wrap">
-    <!-- Header -->
     <header>
       <span class="brand"><h1>Mantesnic Private Capital</h1></span>
     </header>
@@ -123,9 +105,9 @@
         <div class="hero-inner">
           <div class="hero-caption">
             <div class="eyebrow">Private & Confidential</div>
-            <h2 class="headline">INTEGRITY, DISCRETION & TRANSPARENCY<br>are at the core of everything we do.</h2>
+            <h2 class="headline">INTEGRITY, DISCRETION & TRANSPARENCY<br/>are at the core of everything we do.</h2>
             <p class="sub">Mantesnic Private Capital is a discreet boutique investment and advisory firm. As well as originating opportunities, we align our interests by co-investing alongside a select group of global investors.</p>
-            <a class="btn" href="mailto:sk@mantesnicprivatecapital.com">Request an Introduction</a>
+            <a class="btn" href="contact.html">Request an Introduction</a>
           </div>
         </div>
       </div>
@@ -133,36 +115,26 @@
 
     <!-- Philosophy -->
     <section class="statement">
-      <div class="rule"></div>
       <div class="panel">
         <h4>Investment Philosophy</h4>
         <p><em>“Capital is most effective when deployed with patience, discipline, and foresight. Our mission is to create enduring value while protecting the integrity of every relationship.”</em></p>
       </div>
-    </section>
 
-    <!-- About -->
-    <section class="statement">
-      <div class="rule"></div>
+      <!-- About -->
       <div class="panel">
         <h4>About Mantesnic</h4>
         <p>Mantesnic Private Capital is a discreet boutique investment and advisory company. As well as originating opportunities, we align our interests by co-investing alongside a select group of global investors.</p>
         <p>Mantesnic has a distinct approach that is both dynamic and entrepreneurial. We are value-driven and opportunistic and operate on a deal-by-deal basis, covering sectors across EMEA.</p>
         <p>We are well-known for our ability to react quickly and aggressively pursue opportunities. We apply our depth of experience and proprietary analysis to identify investments we consider low risk and which also yield superior returns.</p>
-        <p>Through our long-established contacts with principals, family offices, and operators, we provide access to the very best investment opportunities across the region.</p>
       </div>
     </section>
 
     <!-- Footer -->
     <footer>
-      <div class="row">
-        <span>© <span id="y"></span> Mantesnic Private Capital</span>
-      </div>
-      <p class="subtle" style="margin-top:10px;">Mantesnic Private Capital operates with integrity, discretion, and transparency. Engagements are conducted subject to compliance, due diligence, and mutually agreed terms.</p>
+      © <span id="y"></span> Mantesnic Private Capital
     </footer>
   </div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
