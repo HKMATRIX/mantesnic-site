@@ -4,84 +4,72 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mantesnic Private Capital</title>
-  <meta name="description" content="Mantesnic Private Capital — a discreet investment and advisory boutique focused on disciplined risk, alignment, and decisive execution." />
+  <meta name="description" content="Mantesnic Private Capital — a discreet boutique investment and advisory firm." />
   <meta name="robots" content="index,follow" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Mantesnic Private Capital" />
-  <meta property="og:description" content="A discreet boutique facilitating investment advisory, strategic transactions, and private opportunities." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mantesnicprivatecapital.com/" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/HKMATRIX/mantesnic-site/main/LondonSkyline.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #f5f4f2;
-      --ink: #212224;
-      --muted: #55565a;
-      --accent: #d4af37;   /* richer gold */
-      --card: #ffffff;
-      --line: #e2e2e2;
+    :root{
+      --bg:#f5f4f2;
+      --ink:#212224;
+      --muted:#55565a;
+      --accent:#d4af37;     /* refined gold */
+      --line:#e2e2e2;
+      --card:#ffffff;
     }
 
-    html, body { height: 100%; margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
-    * { box-sizing: border-box; }
-
-    a { color: var(--ink); text-decoration: none; }
-    a:hover { color: var(--accent); }
-
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+    *{box-sizing:border-box}
+    a{color:var(--ink);text-decoration:none}
+    a:hover{color:var(--accent)}
+    .wrap{max-width:1120px;margin:0 auto;padding:24px}
 
     /* Header */
-    header { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
-    .brand h1 { margin: 0; font: 700 18px/1.1 Inter; letter-spacing: .22em; text-transform: uppercase; }
-    nav a { margin-left: 22px; font-weight: 500; font-size: 15px; }
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand h1{margin:0;font:700 18px/1.1 Inter;letter-spacing:.22em;text-transform:uppercase}
+    nav a{margin-left:22px;font-weight:500;font-size:15px;text-transform:uppercase;letter-spacing:.06em}
 
     /* Hero */
-    .hero { position: relative; margin-bottom: 36px; }
-    .hero-visual {
-      position: relative;
-      min-height: clamp(320px, 50vw, 480px);
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background-image: url('https://raw.githubusercontent.com/HKMATRIX/mantesnic-site/main/LondonSkyline.jpg');
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 10px 26px rgba(0,0,0,.3);
+    .hero{position:relative;margin-bottom:36px}
+    .hero-visual{
+      position:relative;min-height:clamp(320px,50vw,520px);
+      border-radius:16px;overflow:hidden;border:1px solid var(--line);
+      background-image:url('https://raw.githubusercontent.com/HKMATRIX/mantesnic-site/main/LondonSkyline.jpg');
+      background-size:cover;background-position:center;
+      box-shadow:0 10px 26px rgba(0,0,0,.3)
     }
-    .hero-textbox {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: rgba(255,255,255,0.92);
-      padding: 14px 20px;
-      border-radius: 8px;
-      max-width: 360px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    /* Top-left elegant overlay */
+    .overlay{
+      position:absolute;top:22px;left:22px;max-width:min(560px,80%);
+      padding:14px 18px;border-radius:10px;
+      background:rgba(18,19,22,.36);             /* translucent charcoal */
+      backdrop-filter:saturate(120%) blur(4px);  /* subtle glass effect */
+      -webkit-backdrop-filter:saturate(120%) blur(4px);
+      border:1px solid rgba(255,255,255,.28);
+      box-shadow:0 6px 18px rgba(0,0,0,.18)
     }
-    .hero-textbox h2 {
-      margin: 0;
-      font: 600 18px/1.4 Inter, sans-serif;
-      letter-spacing: 0.02em;
-      color: var(--ink);
+    .overlay h2{
+      margin:0 0 4px 0;color:#fff;font-weight:600;font-size:20px;
+      text-shadow:0 1px 3px rgba(0,0,0,.45)
+    }
+    .overlay p{
+      margin:0;color:#f3f3f5;font-weight:400;font-size:18px;line-height:1.35;
+      text-shadow:0 1px 2px rgba(0,0,0,.4)
     }
 
     /* Sections */
-    .statement { padding: 20px 0 50px; }
-    .rule { height: 1px; background: linear-gradient(to right, transparent, var(--line), transparent); margin: 32px 0; }
-    .panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; margin-bottom: 24px; }
-    .panel h4 { margin: 0 0 8px; font: 700 12px/1 Inter; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
-    .panel p { margin: 0; line-height: 1.6; }
+    .statement{padding:20px 0 50px}
+    .rule{height:1px;background:linear-gradient(to right,transparent,var(--line),transparent);margin:32px 0}
+    .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:24px;box-shadow:0 6px 16px rgba(0,0,0,.06)}
+    .panel h4{margin:0 0 8px;font:700 12px/1 Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+    .panel p{margin:0;line-height:1.6}
 
     /* Footer */
-    footer { padding: 24px 0 36px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); text-align: center; }
+    footer{padding:24px 0 36px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);text-align:center}
   </style>
 </head>
 <body>
@@ -99,8 +87,9 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-visual">
-        <div class="hero-textbox">
-          <h2>Integrity, Discretion & Transparency<br>are at the core of everything we do.</h2>
+        <div class="overlay" aria-label="Tagline">
+          <h2>Integrity, Discretion &amp; Transparency</h2>
+          <p>are at the core of everything we do.</p>
         </div>
       </div>
     </section>
@@ -123,9 +112,7 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-      © 2014–2025 Mantesnic Private Capital
-    </footer>
+    <footer>© 2014–2025 Mantesnic Private Capital</footer>
   </div>
 </body>
 </html>
